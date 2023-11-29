@@ -5,8 +5,8 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.rules.activityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
+import com.ghedamsisabri.ui_testing_for_beginner.Helper.assertIsViewDisplayed
 import com.ghedamsisabri.ui_testing_for_beginner.Helper.isTextOnScreen
-import com.ghedamsisabri.ui_testing_for_beginner.Helper.isViewDisplayed
 import com.ghedamsisabri.ui_testing_for_beginner.Helper.tap
 import org.hamcrest.Matcher
 
@@ -24,21 +24,21 @@ class ExampleInstrumentedTest {
 
     @Test
     fun checkSecondPage() {
-        mainPageTextView.isViewDisplayed()
+        mainPageTextView.assertIsViewDisplayed()
         NextBtn.tap()
         isTextOnScreen("SecondaryActivity")
-        secondPageActivity.isViewDisplayed()
-        backButton.isViewDisplayed()
+        secondPageActivity.assertIsViewDisplayed()
+        backButton.assertIsViewDisplayed()
 
     }
     @Test
     fun checkFirstPage(){
-        mainPageTextView.isViewDisplayed()
+        mainPageTextView.assertIsViewDisplayed()
         NextBtn.tap()
         backButton.tap()
         isTextOnScreen("MainActivity")
-        firstPageText.isViewDisplayed()
-        NextBtn.isViewDisplayed()
+        firstPageText.assertIsViewDisplayed()
+        NextBtn.assertIsViewDisplayed()
 
     }
 
